@@ -1,0 +1,19 @@
+MONGO DB-----------
+cadena de conexion: mongodb+srv://admin-NGR:qG6GRkSqF5L82Hb@strapi-ecommerce.3clwq.mongodb.net/ecommerce?retryWrites=true&w=majority
+user: admin-NGR 
+pass: qG6GRkSqF5L82Hb 
+base de datos: ecommerce
+nombre de proyecto: react-native-strapi-ecommerce
+
+STRAPI--------------
+Host: strapi-ecommerce.3clwq.mongodb.net
+usu: admin-NGR
+pass: qG6GRkSqF5L82Hb
+
+usuario WEB strapi
+usu: niltongr@outlook.com
+pass: 14@qweszxC
+
+------------------------------------------------------------------
+para cambiar puerto 1337 a uno que este disponible como el 8090
+ruta: (carpeta del servidor strapi)/config/server.js
