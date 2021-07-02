@@ -6,6 +6,7 @@ import StatusBar from '../../components/StatusBar'
 import colors from '../../styles/colors'
 import ScreenLoading from '../../components/ScreenLoading'
 import CarouselImages from '../../components/Product/CarouselImages'
+import { Button } from 'react-native-paper'
 
 export default function Product(props) {
     const {route}=props
@@ -27,9 +28,14 @@ export default function Product(props) {
             !product ? (
             <ScreenLoading text="Cargando producto" size="large"/>
             ) : (
-            <ScrollView>
-                <Text>{product.marca}-{product.title}</Text>
-                <CarouselImages/>
+            <ScrollView style={styles.container}>
+                <Text style={styles.title}>{product.marca}-{product.title}</Text>
+                <CarouselImages imagenes= {product.imagenes}/>
+                <View style= {styles.containerView}>
+                    <Button>
+                        Test
+                    </Button>
+                </View>
             </ScrollView>
             )
         }
@@ -37,4 +43,18 @@ export default function Product(props) {
     )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        // padding: 10, --> para los espacios entre fotos
+        paddingBottom: 50
+    },
+    title: {
+        fontWeight: "bold",
+        fontSize: 15,
+        marginBottom: 20,
+        padding: 10
+    },
+    containerView: {
+        padding: 10
+    }
+})
