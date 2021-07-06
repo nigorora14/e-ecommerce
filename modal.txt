@@ -1,0 +1,66 @@
+import React,{useState} from 'react';
+import { StyleSheet, Text, View } from 'react-native'
+import { Modal, Portal, Button, Provider } from 'react-native-paper';
+
+export default function Quantity(props) {
+    const {quantity, setQuantity} = props
+
+    const [visible, setVisible] = useState(false);
+    const showModal = () => setVisible(true);
+    const hideModal = () => setVisible(false);
+    const containerStyle = {backgroundColor: 'white', padding: 20};
+
+    return (
+      <Provider>
+        <Portal>
+           <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}>
+          <View>
+            <Text></Text>
+            <Button mode="contained" onPress={()=> console.log("object")}>aqui</Button>
+            <Button mode="contained" onPress={()=> console.log("object")}>aqui</Button>
+            <Button mode="contained" onPress={()=> console.log("object")}>aqui</Button>
+            <Button mode="contained" onPress={()=> console.log("object")}>aqui</Button>
+            <Button mode="contained" onPress={()=> console.log("object")}>aqui</Button>
+            <Button mode="contained" onPress={()=> console.log("object")}>aqui</Button>
+            <Button mode="contained" onPress={()=> console.log("object")}>aqui</Button>
+            <Button mode="contained" onPress={()=> console.log("object")}>aqui</Button>
+            <Button mode="contained" onPress={()=> console.log("object")}>aqui</Button>
+            <Button mode="contained" onPress={()=> console.log("object")}>aqui</Button>
+            <Button mode="contained" onPress={()=> console.log("object")}>aqui </Button>
+          </View>
+          </Modal>
+        </Portal>
+        <Button style={{marginTop: 30}} onPress={showModal}>Show</Button>
+      </Provider>
+        // <View style={{zIndex:2}}>
+        //     <DropDownPicker
+        //         defaultValue={quantity}
+        //         containerStyle={styles.containerStyle}
+        //         itemStyle={styles.itemStyle}
+        //         dropDownStyle={styles.dropDownPicker}
+        //         style={styles.dropDownPicker}
+        //         labelStyle={styles.labelStyle}
+        //         onChangeItem={(item) => setQuantity(item.value)}
+        //     />
+        // </View>
+    )
+}
+const styles = StyleSheet.create({
+
+    // containerStyle: {
+    //   height: 40,
+    //   width: 100
+    // },
+    // itemStyle: {
+    //   justifyContent: "flex-start"
+    // },
+    // dropDownStyle: {
+    //   backgroundColor: "#fafafa"
+    // },
+    // dropDownPicker: {
+    //   backgroundColor: "#fafafa"
+    // },
+    // labelStyle: {
+    //   color: "#000"
+    // }
+  })

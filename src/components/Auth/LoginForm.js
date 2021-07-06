@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Alert, ToastAndroid, View} from 'react-native'
-import {TextInput, Button} from 'react-native-paper'
+import {TextInput, Button, Menu, Item} from 'react-native-paper'
 import {useFormik} from 'formik'
 import * as Yup from 'yup'
 import Toast from 'react-native-root-toast'
@@ -13,6 +13,7 @@ export default function LoginForm(props) {
 const {changeForm} = props
 const [loading, setLoading] = useState(false)
 const {login} = useAuth()
+const [showPassword, setShowPassword] = useState(false)
 
 const formik = useFormik ({
     initialValues: initialValues(),
@@ -48,6 +49,10 @@ const formik = useFormik ({
    }
 })
 
+const referenciaSmsError = () => {
+    return !formik.values.referencia
+};
+
     return (
         <View>
             <TextInput label="Email o Usuario" 
@@ -55,15 +60,23 @@ const formik = useFormik ({
                        onChangeText= {(text) => formik.setFieldValue("identifier", text)}
                        value= {formik.values.identifier}
                        error={formik.errors.identifier}
+                       right={<TextInput.Icon icon="account-circle"/>}
+                       mode="outlined"
             />
             <TextInput label="Contraseña" 
                        style={formStyle.input} 
-                       secureTextEntry
+                       secureTextEntry={!showPassword}
                        onChangeText= {(text) => formik.setFieldValue("password", text)}
                        value= {formik.values.password}
                        error={formik.errors.password}
+                       right={
+                            <TextInput.Icon 
+                            icon={ showPassword ? "eye-off" : "eye"}
+                            onPress={() => setShowPassword(!showPassword)}
+                            />}
+                       mode="outlined"
             />
-            <Button mode="contained" 
+           <Button mode="contained" 
                     style={formStyle.btnSucces}
                     onPress={formik.handleSubmit}
                     loading={loading}

@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react'
-//  import { Text, View, Button } from 'react-native'
 import { Provider as PaperProvider } from 'react-native-paper'
 import jwtDecode from 'jwt-decode'
 

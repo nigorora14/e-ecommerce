@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     loading: {
-        //marginBottom: 20,
+        // marginBottom: 20,
         paddingVertical: 20
     },
     title: {
